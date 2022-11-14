@@ -2,12 +2,39 @@ import React, { useRef } from "react";
 import { Skeleton, SkeletonDataOptions } from "./Skeleton";
 
 interface SkeletonLoaderProps {
+    /**
+     * Options for the Skeleton Loader
+	 * `SkeletonDataOptions
+     * { 
+     *   height?: string, 
+     *   width?: string, 
+     *   circle?: boolean;
+     *   customClass?: string;
+     * }`
+	 */
     skeletonData?: SkeletonDataOptions;
+    /**
+     * [React.Children](https://reactjs.org/docs/react-api.html#reactchildren) elements wrapped by the loader
+	 */
     children: React.ReactElement;
+    /**
+     * Boolean prop to toggle display of the loader
+	 */
     showLoader: boolean;
+    /**
+     * Optional `count` prop to repeat the skeleton loader `count` times
+     * Default value: `1`
+	 */
     count?: number;
 }
 
+/**
+ * A dynamic skeleton loader used as a wrapper
+ * that conditionally renders either the wrapped React.Children elements
+ * or the loader dependent on passed props.
+ * @version 1.0.0
+ * @author [Stephen Wahid](https://github.com/wahidstephen)
+ */
 export const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
     skeletonData,
     children,

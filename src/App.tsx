@@ -15,15 +15,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SkeletonLoader showLoader={loader} skeletonData={{ width: '80%', circle: true }}>
+        {/*  Advanced Usage using skeletonData props */}
+        <SkeletonLoader showLoader={loader} skeletonData={{ width: '75%', circle: true }}>
           <img src={logo} className="App-logo" alt="logo" />
         </SkeletonLoader>
+        {/* Basic Usage with non-optional props*/}
         <SkeletonLoader showLoader={loader}>
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
         </SkeletonLoader>
-        <SkeletonLoader showLoader={loader} skeletonData={{ height: `calc(10px + 2vmin)`, customClass: `check-custom-class` }}>
+        {/* Advanced Usage using skeletonData props with customClass property */}
+        <SkeletonLoader showLoader={loader} skeletonData={{ height: `calc(10px + 2vmin)`, customClass: `custom-skeleton-class` }}>
           <a
             className="App-link"
             href="https://reactjs.org"
